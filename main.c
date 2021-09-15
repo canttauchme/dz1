@@ -1,14 +1,13 @@
 #include <stdio.h>
-#include "limits.h"
 int solve(FILE* z){
     int tmp , counter,ctr, min; //
     counter = 1;
-    min = INT_MAX;
-    for (; feof(z) != 1 ; ++counter) {
+    fscanf(z,"%d",&min);
+    for (; !feof(z); ++counter) {
         fscanf(z,"%d",&tmp);
         if(tmp < min){
             min = tmp;
-            ctr = counter;
+            ctr = counter+1;
         }
     }
     return ctr;
